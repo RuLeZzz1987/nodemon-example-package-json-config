@@ -1,0 +1,33 @@
+{
+  "name": "demo-mon-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "build": "tsc"
+  },
+  "author": "Alex Duka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.1",
+    "@types/express": "^4.16.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "verbose": false,
+    "exec": "npm run build && node --nolazy --inspect=0.0.0.0:5851 ./index.js",
+    "watch": [
+      "src/**/*"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "delay": "2500",
+    "ext": "js, json, ts"
+  }
+}
